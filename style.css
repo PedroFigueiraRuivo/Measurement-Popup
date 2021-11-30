@@ -31,10 +31,7 @@
     font-size: 13px;
     text-transform: uppercase;
     transition: all .2s ease-out;
-    float: right;
     position: relative;
-    top: 40px;
-    right: 20px;
 }
 
 .pfr-btn-measurementTable:hover {
