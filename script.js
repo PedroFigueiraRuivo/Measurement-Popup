@@ -78,11 +78,6 @@ function pfr__EXECUTE__measurementTable( img_popUp, exclude_of_popUp ){
 			newDiv.classList.add( 'pfr-measurementTable-collapse' );
 			( document.body ).appendChild( newDiv );
 			
-			const newbutton = document.createElement( 'button' );
-			newbutton.classList.add( 'pfr-i-pop-up' );
-			newbutton.innerText = 'Fechar';
-			newDiv.appendChild( newbutton );
-			
 			const newImg = document.createElement( 'img' );
 			newImg.classList.add( 'pfr-tableMens-pop-up' );
 			newImg.src = img;
