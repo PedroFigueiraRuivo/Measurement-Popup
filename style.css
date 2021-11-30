@@ -1,0 +1,94 @@
+/* START -> PFR_SC */
+
+/*
+ * @Author: Pedro Figueira - Ruivo
+ * @Nickname: SushiCru
+ * @PluginName: Measurement Table
+ * @Code Type: CSS
+ * 
+ * --------------------------------------------------------
+ * Follow the instuções and good advantage!
+ *
+ */
+
+
+.pfr-measurementTable-collapse{
+	display:none !important;
+}
+
+/*||||||||||||||||||||||||||||||||||||||||||||||||\*/
+.pfr-btn-measurementTable{
+	box-shadow: 0 0 9px -2px #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 700;
+    box-sizing: border-box;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    margin: 10px 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: all .2s ease-out;
+    float: right;
+    position: relative;
+    top: 40px;
+    right: 20px;
+}
+
+.pfr-btn-measurementTable:hover {
+    background: #000;
+    color: #fff
+}
+
+@media only screen and ( max-width: 700px ){
+	.pfr-btn-measurementTable{
+	    top: 0px;
+	    right: 0px;
+	}
+
+}
+/*||||||||||||||||||||||||||||||||||||||||||||||||\*/
+
+#pfr_tableMens_popUp{
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+	background-color: rgba( 0, 0, 0, .8 );
+	width: 100%;
+	height: 100%;
+	display: flex;
+	
+	justify-content: center;
+	align-items: center;
+}
+
+.pfr-tableMens-pop-up{
+	max-width: 80%;
+	max-height: 80%;
+	border: 10px solid #ccc;
+	border-radius: 8px;
+	
+}
+
+button.pfr-i-pop-up{
+
+    width: 86px;
+    height: 30px;
+    background: none;
+    bottom: 10px;
+    position: absolute;
+    border: 2px solid #fff;
+    padding: 0 20px;
+    font-weight: 600;
+    color: #fff;
+    
+}
+
+@media only screen and ( max-width: 400px ){
+	button.pfr-i-pop-up{
+	    bottom: 20vw;
+	}
+
+}
