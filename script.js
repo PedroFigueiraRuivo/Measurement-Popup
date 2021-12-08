@@ -1,7 +1,3 @@
-//JS
-// let url_da_imagem_do_popup = ''; // Aceita uma url. Ex.: https://meusite.com/caminho_da_imagem
-// let lista_de_produtos_a_ignorar = [ '', '' ]; // aceita uma lista de elementos em que, caso a página os contenha, o plugin não será executado nela. Ex.: [ '#pagina .a-page', '.produto-id-12015' ]; || Nota: procure ser o mais específico possível || Aceita n parâmetros.
-
 function pfr__EXECUTE__measurementTable( img_popUp, exclude_of_popUp ){
 
 	function pfr__measurementTable( URL_imgToPopUp ){
@@ -149,4 +145,4 @@ function pfr__EXECUTE__measurementTable( img_popUp, exclude_of_popUp ){
 
 }
 
-pfr__EXECUTE__measurementTable( url_da_imagem_do_popup, lista_de_produtos_a_ignorar );
+pfr__EXECUTE__measurementTable( pfr__plugin__measurementTable.url_da_imagem_do_popup, pfr__plugin__measurementTable.lista_de_produtos_a_ignorar );
