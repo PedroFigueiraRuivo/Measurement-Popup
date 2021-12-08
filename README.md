@@ -19,7 +19,7 @@
 
 <p>Para começar você terá que incluir no script responsável pelas definições o seguinte código:</p>
 <blockquote>
-pfr__plugin__measurementTable = {<br>
+var pfr__plugin__measurementTable = {<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;url_da_imagem_do_popup: '',<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;lista_de_produtos_a_ignorar: [ '', '' ]<br>
 };
