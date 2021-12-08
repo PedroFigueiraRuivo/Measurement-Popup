@@ -1,7 +1,7 @@
 <h1>Measurement PopUp</h1>
 
 <h2>Objetivo</h2>
-<p>O desenvolvimento desse plugin tem como objetivo adicionar um botão de pop-up em todos os produtos, de modo em que após a interação do usuário com o botão seja aberto uma janela com uma imagem demonstrando como o cliente pode executar o cálculo para comprar a peça do tamanho que lhe seja apropriado.</p>
+<p>O desenvolvimento desse plugin tem como objetivo adicionar um botão de pop-up em todos os produtos, de modo em que após a interação do usuário com o botão seja aberta uma janela com uma imagem demonstrando uma tabela de medidas ensinando como o cliente pode tirar suas medidas para comprar a peça do tamanho que lhe seja apropriado.</p>
 
 <h1>Início</h1>
 <h3>Configurando</h3>
