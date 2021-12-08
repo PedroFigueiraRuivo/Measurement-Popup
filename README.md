@@ -5,7 +5,7 @@
 
 <h1>Início</h1>
 <h3>Configurando</h3>
-<p>Se você já utilizou algum plugin loja integrada disponibilizado por mim significa que você já deve saber dos passos iniciais. Caso não saiba, basta clicar <a href="https://doc">aqui</a>.</p>
+<p>Se você já utilizou algum plugin loja integrada disponibilizado por mim significa que você já deve saber dos passos iniciais. Caso não saiba, basta clicar <a target="_blank" href="https://github.com/PedroFigueiraRuivo/pedrofigueiraruivo.github.io/blob/main/Docs/doc-plugins-lojaintegrada.md">aqui</a>.</p>
 <br>
 
 <p>Ok! Agora que você já sabe como funciona ( assim espero ), vamos entender o funcionamento do plugin.</p>
