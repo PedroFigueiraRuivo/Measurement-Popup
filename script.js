@@ -145,4 +145,18 @@ function pfr__EXECUTE__measurementTable( img_popUp, exclude_of_popUp ){
 
 }
 
-pfr__EXECUTE__measurementTable( pfr__plugin__measurementTable.url_da_imagem_do_popup, pfr__plugin__measurementTable.lista_de_produtos_a_ignorar );
+if( typeof( pfr__plugin__measurementTable ) != 'undefined' ){
+	
+	if( typeof(pfr__plugin__measurementTable.url_da_imagem_do_popup) != 'undefined' && typeof(pfr__plugin__measurementTable.lista_de_produtos_a_ignorar) != 'undefined' ){
+	
+		pfr__EXECUTE__measurementTable( pfr__plugin__measurementTable.url_da_imagem_do_popup, pfr__plugin__measurementTable.lista_de_produtos_a_ignorar );
+		
+	}else{
+		
+		console.info( 'Você immportou o plugin pfr-Measurement PopUp mas ele não será executado pois as variáveis de configurações não foram encontradas.' );
+		
+	}
+
+}else{
+	console.info( 'Você immportou o plugin pfr-Measurement PopUp mas ele não será executado pois o bloco de configuração não foi encontrado.' );
+}
