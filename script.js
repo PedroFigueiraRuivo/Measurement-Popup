@@ -1,3 +1,8 @@
+var pfr__plugin__measurementTable = {
+    url_da_imagem_do_popup: '',
+    lista_de_produtos_a_ignorar: [ '', '' ]
+};
+
 function pfr__EXECUTE__measurementTable( img_popUp, exclude_of_popUp ){
 
 	function pfr__measurementTable( URL_imgToPopUp ){
@@ -74,10 +79,15 @@ function pfr__EXECUTE__measurementTable( img_popUp, exclude_of_popUp ){
 			newDiv.classList.add( 'pfr-measurementTable-collapse' );
 			( document.body ).appendChild( newDiv );
 			
-			const newImg = document.createElement( 'img' );
-			newImg.classList.add( 'pfr-tableMens-pop-up' );
-			newImg.src = img;
-			newDiv.appendChild( newImg );
+			const content = `
+			<div class="pfr-tableMens-pop-up">
+				<img src="${ img }">
+				<button>X</button>
+			</div>
+			
+			`;
+			
+			newDiv.insertAdjacentHTML( 'beforeend', content );
 			
 		}
 		
