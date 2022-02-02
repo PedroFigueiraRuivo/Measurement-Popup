@@ -1,9 +1,4 @@
-var pfr__plugin__measurementTable = {
-    url_da_imagem_do_popup: '',
-    lista_de_produtos_a_ignorar: [ '', '' ]
-};
-
-function pfr__EXECUTE__measurementTable( img_popUp, exclude_of_popUp ){
+function pfr__EXECUTE__measurementTable( img_popUp, exclude_of_popUp, exclude_category_of_popUp ){
 
 	function pfr__measurementTable( URL_imgToPopUp ){
 		
@@ -116,32 +111,57 @@ function pfr__EXECUTE__measurementTable( img_popUp, exclude_of_popUp ){
 		}
 
 	}
-
-	if( img_popUp != null && img_popUp != '' ){
-		
-		let newArr = exclude_of_popUp.filter( ( exclude ) => {
+	
+	function pfr__measurementTable_tratArr( paramer ){
+		let newArr = paramer.filter( ( exclude ) => {
 			return exclude != '';
 		} );
 		
-		if( newArr.length != 0 ){
+		return newArr;
+	}
+
+	if( img_popUp != null && img_popUp != '' ){
+	
+		
+		let ignoreProducts = pfr__measurementTable_tratArr( exclude_of_popUp );
+		
+		let runCategory = true;
+		let exclude_category = pfr__measurementTable_tratArr( exclude_category_of_popUp );
+		
+		const pppcategory = document.querySelector( '.principal .info-principal-produto .breadcrumbs ul li:last-child' );
+		
+		for( let II = 0; II < exclude_category.length; II++ ){
+			if( exclude_category[ II ] == pppcategory.lastElementChild.innerText ){
+				runCategory = false;
+			}
+		}
+		
+		if( runCategory ){
+			if( ignoreProducts.length !== 0 ){
+				
+				for( let II = 0; II < ( ignoreProducts.length ); II++ ){
+					
+					if( !document.querySelector( ignoreProducts[ II ] ) ){
 			
-			for( let II = 0; II < ( newArr.length ); II++ ){
-				
-				if( ! document.querySelector( newArr[ II ] ) ){
+					console.log( runCategory );
+						pfr__measurementTable( img_popUp );
 					
-					pfr__measurementTable( img_popUp );
-				
-				}else{
-					
-					console.warn( 'Plugin PFR Measurement Table: Você definiu que o Plugin não será executado nesse produto.' )
+					}else{
+						
+						console.warn( 'Plugin PFR Measurement Table: Você definiu que o Plugin não será executado nesse produto.' );
+						
+					}
 					
 				}
 				
+			}else{
+				
+				pfr__measurementTable( img_popUp );
+				
 			}
-			
 		}else{
-			
-			pfr__measurementTable( img_popUp );
+						
+			console.warn( 'Plugin PFR Measurement Table: Você definiu que o Plugin não será executado nessa categoria.' );
 			
 		}
 		
@@ -149,24 +169,31 @@ function pfr__EXECUTE__measurementTable( img_popUp, exclude_of_popUp ){
 
 	}else{
 		
-		console.error( 'O plugin não funcionará sem uma url de imagem definida!' );
+		console.error( 'plugin pfr-Measurement Table: O plugin não funcionará sem uma url de imagem definida!' );
 		
 	}
 
 }
 
-if( typeof( pfr__plugin__measurementTable ) != 'undefined' ){
-	
-	if( typeof(pfr__plugin__measurementTable.url_da_imagem_do_popup) != 'undefined' && typeof(pfr__plugin__measurementTable.lista_de_produtos_a_ignorar) != 'undefined' ){
-	
-		pfr__EXECUTE__measurementTable( pfr__plugin__measurementTable.url_da_imagem_do_popup, pfr__plugin__measurementTable.lista_de_produtos_a_ignorar );
-		
-	}else{
-		
-		console.info( 'Você immportou o plugin pfr-Measurement PopUp mas ele não será executado pois as variáveis de configurações não foram encontradas.' );
-		
-	}
+if( ( document.body ).classList.contains( 'pagina-produto' ) ){
 
-}else{
-	console.info( 'Você immportou o plugin pfr-Measurement PopUp mas ele não será executado pois o bloco de configuração não foi encontrado.' );
+	if( typeof( pfr__plugin__measurementTable ) != 'undefined' ){
+		
+		if( typeof(pfr__plugin__measurementTable.url_da_imagem_do_popup) != 'undefined' && typeof(pfr__plugin__measurementTable.lista_de_produtos_a_ignorar) != 'undefined' && pfr__plugin__measurementTable.lista_de_categorias_a_ignorar != 'undefined' ){
+		
+			pfr__EXECUTE__measurementTable( 
+				pfr__plugin__measurementTable.url_da_imagem_do_popup, 
+				pfr__plugin__measurementTable.lista_de_produtos_a_ignorar,
+				pfr__plugin__measurementTable.lista_de_categorias_a_ignorar
+			);
+			
+		}else{
+			
+			console.info( 'Você immportou o plugin pfr-Measurement PopUp mas ele não será executado pois as variáveis de configurações não foram encontradas.' );
+			
+		}
+	
+	}else{
+		console.info( 'Você immportou o plugin pfr-Measurement PopUp mas ele não será executado pois o bloco de configuração não foi encontrado.' );
+	}
 }

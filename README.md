@@ -12,6 +12,8 @@
 <p><code>Funcionalidade 1</code>: <span>Adicionar um botão em todos os produtos para mostrar uma tabela de medidas dentro de um pop-up;</span></p>
 <p><code>Funcionalidade 2</code>: <span>Possui um seletor CSS para que o usuário identifique páginas caso não queira que o plugin funcione em um ou mais produtos específicos</span></p>
 
+<p><code>Funcionalidade 3</code>: <span>Possui um campo para que o usuário identifique categorias caso não queira que o plugin funcione em produtos que façam parte dessa categoria</span></p>
+
 <div align="center">
 <img src="https://user-images.githubusercontent.com/93988164/152079780-a5e2f89c-c75d-4e5f-9197-bf1b255fae8c.gif">
 </div>
@@ -35,14 +37,17 @@ var pfr__plugin__measurementTable = {
 
 <p>Com o código adicionado, basta que coloque um link da imagem da tabela de medidas dentro das aspas do compo <code>url_da_imagem_do_popup</code>. Lembre-se que sem essa url adicionada o plugin não será executado.</p>
 
-<p>O segundo campo consiste em uma funcionalidade extra. Ele recebe uma lista ilimitada de seletores CSS adicionados dentro das aspas para que possam identificar uma página de produto específica, fazendo com que o plugin não seja executado nessas páginas.</p><strong>Exemplo de uso:</strong>
+<p>O segundo campo consiste em uma funcionalidade extra. Ele recebe uma lista ilimitada de seletores CSS adicionados dentro das aspas para que possam identificar uma página de produto específica, fazendo com que o plugin não seja executado nessas páginas.</p>
+
+<p>O terceiro campo consiste em mais uma funcionalidade extra. Ele recebe uma lista ilimitada de nomes de categorias adicionados dentro das aspas para que possam identificar uma página de produto que faça parte dessa categoria específica, fazendo com que o plugin não seja executado nessas páginas.</p><strong>Exemplo de uso:</strong>
 <pre>
     var pfr__plugin__measurementTable = {
         url_da_imagem_do_popup: 'https://urlficticia.com.br/caminho-ficticio',
-        lista_de_produtos_a_ignorar: [ '.pagina-produto.produto-110746371', '.pagina-produto.produto-110746372' ]
+        lista_de_produtos_a_ignorar: [ '.pagina-produto.produto-110746371', '.pagina-produto.produto-110746372' ],
+        lista_de_categorias_a_ignorar: [ 'Cangas e Bolsas', 'Biquini' ],
     };
 </pre>
-<p>As configurações acima farão com que o plugin funcione em todas as páginas menos na página do produto de id = "110746371" e da página de id = "110746372".</p>
+<p>As configurações acima farão com que o plugin funcione em todas as páginas menos na página do produto de id = "110746371" e da página de id = "110746372". O plugin também não será executado nas páginas de produtos que façam parte dessas categorias. É importante ressaltar que o plugin tem nível de preferência para com o campo de categorias.</p>
 <p><strong>NOTA:</strong> Você não precisa adicionar a página da home ou páginas personalizadas para serem ignoradas pois, por padrão, o plugin só funciona em páginas de produtos.</p>
 
 
