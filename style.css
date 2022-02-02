@@ -27,7 +27,7 @@
 #pfr_tableMens_popUp{
 	position: fixed;
 	top: 0;
-	z-index: 1000;
+	z-index: 999991;
 	background-color: rgba( 0, 0, 0, .8 );
 	width: 100%;
 	height: 100%;
