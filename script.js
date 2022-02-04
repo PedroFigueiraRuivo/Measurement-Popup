@@ -119,50 +119,58 @@ function pfr__EXECUTE__measurementTable( img_popUp, exclude_of_popUp, exclude_ca
 		
 		return newArr;
 	}
-
-	if( img_popUp != null && img_popUp != '' ){
 	
+	function productRate( arr, search = false ){
 		
-		let ignoreProducts = pfr__measurementTable_tratArr( exclude_of_popUp );
-		
-		let runCategory = true;
-		let exclude_category = pfr__measurementTable_tratArr( exclude_category_of_popUp );
-		
-		const pppcategory = document.querySelector( '.principal .info-principal-produto .breadcrumbs ul li:last-child' );
-		
-		for( let II = 0; II < exclude_category.length; II++ ){
-			if( exclude_category[ II ] == pppcategory.lastElementChild.innerText ){
-				runCategory = false;
-			}
-		}
-		
-		if( runCategory ){
-			if( ignoreProducts.length !== 0 ){
-				
-				for( let II = 0; II < ( ignoreProducts.length ); II++ ){
-					
-					if( !document.querySelector( ignoreProducts[ II ] ) ){
+			let executeProduct = true;
 			
-					console.log( runCategory );
-						pfr__measurementTable( img_popUp );
+			if( arr.length !== 0 ){
+				
+				if( search ){
 					
-					}else{
+					for( let II = 0; II < arr.length; II++ ){
+						if( arr[ II ] == search ){
+							executeProduct = false;
+						}
+					}
+					
+				}else{
+					
+					for( let II = 0; II < arr.length; II++ ){
 						
-						console.warn( 'Plugin PFR Measurement Table: Você definiu que o Plugin não será executado nesse produto.' );
+						if( document.querySelector( arr[ II ] ) ){
+							executeProduct = false;
+						}
 						
 					}
 					
 				}
 				
-			}else{
-				
-				pfr__measurementTable( img_popUp );
-				
 			}
-		}else{
-						
-			console.warn( 'Plugin PFR Measurement Table: Você definiu que o Plugin não será executado nessa categoria.' );
 			
+			return executeProduct;
+		}
+
+	if( img_popUp != null && img_popUp != '' ){
+	
+		let runcode;
+		
+		let ignoreProducts = pfr__measurementTable_tratArr( exclude_of_popUp );
+		let exclude_category = pfr__measurementTable_tratArr( exclude_category_of_popUp );
+		
+		const productCategory = document.querySelector( '.principal .info-principal-produto .breadcrumbs ul li:last-child' );
+		
+		
+		runcode = productRate( ignoreProducts );
+		
+		if( runcode ){
+			runcode = productRate( exclude_category, productCategory.lastElementChild.innerText );
+		}
+					
+		if( runcode ){
+
+			pfr__measurementTable( img_popUp );
+		
 		}
 		
 		

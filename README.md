@@ -2,7 +2,7 @@
 <h1>Measurement PopUp</h1>
 <div>
   <img src="https://img.shields.io/badge/Status-Finalizando-blueviolet">
-  <img src="https://img.shields.io/badge/Versão-1.6-blue">
+  <img src="https://img.shields.io/badge/Versão-1.7-blue">
 </div>
 <br/>
 <p>Esse plugin tem como objetivo adicionar um botão de pop-up em todos os produtos, de modo em que após a interação do usuário com o botão, seja aberta uma janela com uma imagem demonstrando uma tabela de medidas ensinando como o cliente pode tirar suas medidas para comprar a peça do tamanho que lhe seja apropriado.</p>
