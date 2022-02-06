@@ -31,7 +31,8 @@
 <pre>
 var pfr__plugin__measurementTable = {
     url_da_imagem_do_popup: '',
-    lista_de_produtos_a_ignorar: [ '', '' ]
+    lista_de_produtos_a_ignorar: [ '', '' ],
+    lista_de_categorias_a_ignorar: [ '', '' ]
 };
 </pre>
 
